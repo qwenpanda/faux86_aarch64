@@ -21,7 +21,7 @@
 
 /* packet.c: functions to interface with libpcap/winpcap for ethernet emulation. */
 
-#include "config.h"
+#include "Config.h"
 
 #ifdef NETWORKING_ENABLED
 #define HAVE_REMOTE
@@ -35,7 +35,7 @@
 #define PCAP_OPENFLAG_PROMISCUOUS 1
 #endif
 
-#include "ram.h"
+#include "Ram.h"
 #include "i8259.h"
 
 extern uint8_t verbose;

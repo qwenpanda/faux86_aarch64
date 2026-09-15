@@ -1,4 +1,4 @@
-#include "../config.h"
+#include "../Config.h"
 #include "../../../win32/resource.h"
 #include <Windows.h>
 #include <SDL/SDL.h>

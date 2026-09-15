@@ -25,14 +25,14 @@
    is included with this source code, in the data/ directory. the filename is
    pd.com - inject this file into any floppy or hard disk image if needed! */
 
-#include "config.h"
+#include "Config.h"
 #ifdef NETWORKING_ENABLED
 #ifdef NETWORKING_OLDCARD
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
-#include "cpu.h"
-#include "ram.h"
+#include "CPU.h"
+#include "Ram.h"
 #include "packet.h"
 
 struct netstruct {

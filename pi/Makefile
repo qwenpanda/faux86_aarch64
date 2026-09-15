@@ -32,6 +32,12 @@ OBJS	=  kernel.o main.o CircleHostInterface.o PWMSound.o VCHIQSound.o \
 
 CPPFLAGS = -I$(SRCDIR) -Wall -Werror -O3
 
+# Circle's Rules.mk 'clean' target only globs *.o etc. in this directory (pi/).
+# Without this, `make clean` silently leaves ../src/faux86/*.o in place, which
+# can get relinked against object files built by a different toolchain if you
+# switch toolchains without a full rebuild.
+EXTRACLEAN = $(SRCDIR)/*.o $(SRCDIR)/*.d
+
 #OBJS	= ../src/fake86/main.o
 
 #LIBS	= $(CIRCLEHOME)/lib/usb/libusb.a \

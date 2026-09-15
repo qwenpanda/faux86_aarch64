@@ -30,7 +30,8 @@ tar xzf xpack-dev-tools-aarch64-none-elf-gcc-13.3.1-1.1.2.tgz
 curl -L -o toolchain.tar.gz "https://github.com/xpack-dev-tools/aarch64-none-elf-gcc-xpack/releases/download/v13.3.1-1.1/xpack-aarch64-none-elf-gcc-13.3.1-1.1-linux-x64.tar.gz"
 echo "f76dc6d105f054fcb3f2a39ecf206d99101dc87931a5b9227fe886cb9478b667  toolchain.tar.gz" | sha256sum -c -
 tar xzf toolchain.tar.gz
-# symlink aarch64-none-elf-* binaries into your PATH
+# make the aarch64-none-elf-* binaries available on your PATH, e.g.:
+export PATH="$(pwd)/xpack-aarch64-none-elf-gcc-13.3.1-1.1/bin:$PATH"
 ```
 
 Verify: `aarch64-none-elf-gcc -print-file-name=libm.a` should resolve to a

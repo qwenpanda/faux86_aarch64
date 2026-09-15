@@ -34,7 +34,7 @@
 #include <SDCard/emmc.h>
 //#include <circle/fs/fat/fatfs.h>
 #include <circle/types.h>
-#include <circle/usb/dwhcidevice.h>
+#include <circle/usb/usbhcidevice.h>  //#include <circle/usb/dwhcidevice.h>
 #include <vc4/vchiq/vchiqdevice.h>
 #include <fatfs/ff.h>
 #include <circle/sched/scheduler.h>
@@ -88,7 +88,7 @@ private:
 	CLogger			m_Logger;
 	CScheduler		m_Scheduler;
 
-	CDWHCIDevice		m_DWHCI;
+	CUSBHCIDevice	m_DWHCI; //CDWHCIDevice		m_DWHCI;
 
 #if USE_MMC_MOUNTING
 	CEMMCDevice		m_EMMC;
@@ -96,7 +96,7 @@ private:
 	CVCHIQDevice		m_VCHIQ;
 
 	FATFS			m_FileSystem;
-	
+
 	//CFATFileSystem		m_FileSystem;
 	Faux86::CircleHostInterface* HostInterface;
 	Faux86::Config* vmConfig;
